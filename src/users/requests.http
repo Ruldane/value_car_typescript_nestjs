@@ -3,15 +3,24 @@ POST http://localhost:3000/auth/signup
 content-type: application/json 
 
 {
-  "email": "testaaa@gmail.com",
+  "email": "holla@gmail.com",
+  "password": "testttt"
+}
+
+### login a user
+POST http://localhost:3000/auth/signin
+content-type: application/json 
+
+{
+  "email": "holla@gmail.com",
   "password": "testttt"
 }
 
 ### Find a user with ID 
-GET http://localhost:3000/auth/3
+GET http://localhost:3000/auth/5
 
 ### Find all users with a given email
-GET http://localhost:3000/auth?email=test@gmail.com
+GET http://localhost:3000/auth?email=hellos@gmail.com
 
 ### Remove a user with ID 
 DELETE  http://localhost:3000/auth/1
@@ -31,3 +40,15 @@ content-type: application/json
 {
   "password": "BBBBBBadsds@gmail.com"
 }
+
+### Set a color to try cookie session
+GET http://localhost:3000/auth/colors/red
+
+### Set a color to try cookie session
+GET http://localhost:3000/auth/colors
+
+### Get currently signedUser
+GET http://localhost:3000/auth/whoAmI
+
+### Signeout
+POST http://localhost:3000/auth/signout

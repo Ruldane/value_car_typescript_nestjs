@@ -13,12 +13,8 @@ export function Serialize(dto: any) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }
 
-interface ClassConstructor {
-  new (...args: any[]): {};
-}
-
 export class SerializeInterceptor implements NestInterceptor {
-  constructor(private dto: ClassConstructor) {}
+  constructor(private dto: any) {}
 
   intercept(context: ExecutionContext, handler: CallHandler): Observable<any> {
     // Run something before a resquest is handled by the request handler

@@ -18,11 +18,11 @@ export class SerializeInterceptor implements NestInterceptor {
 
   intercept(context: ExecutionContext, handler: CallHandler): Observable<any> {
     // Run something before a resquest is handled by the request handler
-    console.log('i am running before the handler', context);
+    //console.log('i am running before the handler', context);
     return handler.handle().pipe(
       map((data: any) => {
         //run something before the response is send out
-        console.log('I am running before the response is out', data);
+        //console.log('I am running before the response is out', data);
         return plainToInstance(this.dto, data, {
           // will only return the value with expose inside user DTO
           excludeExtraneousValues: true,
